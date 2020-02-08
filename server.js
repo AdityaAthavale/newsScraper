@@ -4,6 +4,7 @@ var logger = require("morgan");
 var axios = require("axios");
 var cheerio = require("cheerio");
 var Article = require("./model.js");
+require('dotenv').config()
 
 var app = express();
 
@@ -19,7 +20,7 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/userdb", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb", { useNewUrlParser: true });
 var results = [];
 
 app.get("/search", function(req, res) {
