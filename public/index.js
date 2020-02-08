@@ -32,7 +32,8 @@ function makeCard(element) {
     cardBody.append(title)
 
     let a = $('<a>');
-    a.attr('href', element.link);
+
+    a.attr('href', "https://www.nytimes.com/" + element.link);
     a.attr('target', '_blank')
     a.text('more...');
     a.addClass('btn');
