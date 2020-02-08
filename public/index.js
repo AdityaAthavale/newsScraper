@@ -1,6 +1,7 @@
 $(document).ready(function () {
-    $("#saerchButton").click(function() {
+    $("#saerchButton").click(function(event) {
         $("#search-list").html("")
+        event.preventDefault()
        let searchQuery = $("#searchField").val()
        $.ajax({
             type: "get",

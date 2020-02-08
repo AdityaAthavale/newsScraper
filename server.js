@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb", { useN
 var results = [];
 
 app.get("/search", function(req, res) {
-  res.sendFile(__dirname + '/public/articles.html')
+  res.sendFile(__dirname + '/public/index.html')
 })
 
 app.get("/scrape/:searchQuery", function(req, res) {
